@@ -22,7 +22,8 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKSc
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let myURL = URL(string:"https://order.mlinkdev.ortho-team.ch")
+        let url = Bundle.main.infoDictionary?["LaunchURL"] as! String
+        let myURL = URL(string:url)
         let myRequest = URLRequest(url: myURL!)
         webView.load(myRequest)
     }
